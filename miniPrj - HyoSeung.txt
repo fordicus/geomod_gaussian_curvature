@@ -1,0 +1,54 @@
+-------------------------------------------------------------------
+    Cover       (Page 1)
+-------------------------------------------------------------------
+Hi, my name is HyoSeung and this is Vassillen,
+we will be presenting our Feature Detection mini project.
+ 
+In our project, we approximate the second fundamental tensor per-vertex
+on triangular- 3D meshes based on Szymon's paper which was offered from the lecture.
+We use it to compute the principal curvatures and directions, which
+we then use to compute the Gaussian curvatures and Mean curvatures.
+ 
+We additionally implemented a part of Meyer's paper in MATLAB which is another
+paper from the given references, but eventually opted for the implementation
+based on Szymon's paper, since it does not have topological restrictions
+such as holes in meshes, so it handles degenerate cases well compared to other methods,
+and it can directly operate on vertices and triangles - it is not requiring 
+a specialized structure such as the 1-ring neighbourhood. 
+The fact that the algortihm can be run per-vertex and per-triangle,
+it also makes it highly parallelizable.
+ 
+Our project is implemented in C++ and we have implemented a renderer
+using OpenGL in order to visualize our results in real-time; this mainly
+benefits the rendering of larger models such as the model with 3.7 million triangles.
+For the GUI we have used a third-party library called "Dear ImGUI".
+
+ 
+-------------------------------------------------------------------
+    Motivation  (Page 2)
+------------------------------------------------------------------- 
+The second fundamental form has various applications in Modeling, Rendering,
+and Computer Vision. Some of these applications include: surface point classification,
+non-photorealistic rendering, feature-preserving denoising, and mesh simplification.
+ 
+Next, Vassillen will go over the algorithmic details for our project.
+
+ 
+-------------------------------------------------------------------
+    Summary at Page 18 (Tweety)
+------------------------------------------------------------------- 
+To summarize, our project estimates the second fundamental form
+per-vertex on a triangular mesh. We compute the principal curvatures and
+directions from the tensors. We can visualize all of these, 
+including the mean curvatures and gaussian curvatures.
+
+The implemented algorithm is robust to mesh discretization by using
+the Voronoi-weights presented in Meyer's paper. Additionally, it can handle
+some degenerate cases such as holes in the model. It is also an efficient algorithm
+since it does not require a specific data structure, and it formulates per-vertex
+and per-triangle.
+ 
+Thanks.
+
+
+
